@@ -168,7 +168,7 @@ header label i{
 }
 
 .red{
-  background: color #c0392b;;
+  background-color:#c0392b;;
 }
 
 .yellow{
@@ -178,3 +178,169 @@ header label i{
 .orange{
   background-color: #d35400;;
 }
+
+
+/*------Fixed Image Slied Menu------*/
+
+.thumb{
+  position:fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5px;
+  padding: 10px;
+  z-index: 101;
+}
+
+.thumb li{
+  margin: 10px 0;
+  transition: all 0.3s ease-in;
+}
+
+.thumb img{
+  max-width: 50px;
+}
+
+/* Footer */
+
+footer{
+  width: 100%;
+  position: fixed;
+  z-index: 101;
+  bottom: 0;
+  left: 0;
+  padding:20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+/* Social Icons */
+
+footer .social{
+  margin-bottom: 10px;
+}
+
+footer .social a{
+  margin-left: 20px;
+}
+
+footer .social i{
+  color: #000;
+  font-size: 1.6rem;
+  transition: all 0.3s ease-in;
+}
+footer .social i:hover{
+  transform: scale(1.1);
+}
+
+/* Credit Text */
+
+footer .credit{
+  text-align: right;
+  color: #000;
+  font-size: 0.9rem;
+}
+
+/* -----Image Slide----- */
+/* First Image */
+#burger:checked ~ .container .bg-img img:nth-child(1){
+  visibility: visible;
+  opacity: 1;
+}
+
+#burger:checked ~ .container .bg-img img:nth-child(2),
+#burger:checked ~ .container .bg-img img:nth-child(3),
+#burger:checked ~ .orange,
+#burger:checked ~ .yellow{
+  max-height: 0;
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Second Image */
+#fries:checked ~ .container .bg-img img:nth-child(2){
+  visibility: visible;
+  opacity: 1;
+}
+
+#fries:checked ~ .container .bg-img img:nth-child(1),
+#fries:checked ~ .container .bg-img img:nth-child(3),
+#fries:checked ~ .red,
+#fries:checked ~ .orange{
+  max-height: 0;
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Third Image */
+#coke:checked ~ .container .bg-img img:nth-child(3){
+  visibility: visible;
+  opacity: 1;
+}
+
+#coke:checked ~ .container .bg-img img:nth-child(1),
+#coke:checked ~ .container .bg-img img:nth-child(2),
+#coke:checked ~ .red,
+#coke:checked ~ .yellow{
+  max-height: 0;
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* ----Responsive----*/
+
+@media(max-width:950px){
+  /*Header*/
+  header{
+    flex-direction:column;
+    padding: 20px 50px;
+  }
+
+  header .logo{
+    margin-bottom: 10px;
+  }
+
+  /*Container*/
+
+  .container{
+    flex-direction: column;
+  }
+  .container .text-box{
+    width: 100%;max-width: 550px;
+    text-align: center;
+  }
+
+  .container .bg-img{
+    max-width: 450px;
+    width: 100%;
+  }
+
+  .container .bg-img img:nth-child(3){
+    width: 100%;
+  }
+
+  /*Footer*/
+
+  footer{
+    position: relative;
+  }
+}
+
+@media(max-width:470px){
+  /*Header*/
+  header .menu{
+    position: absolute;
+    width: 100%;
+    max-width: inherit;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 10px 0;
+    top: 120px;
+    /*left: -100%;*/
+    transition: all 0.3s ease-in;
+  }
+}
+
+
+
