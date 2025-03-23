@@ -337,10 +337,39 @@ footer .credit{
     background-color: #fff;
     padding: 10px 0;
     top: 120px;
-    /*left: -100%;*/
+    left: -100%;
     transition: all 0.3s ease-in;
   }
 
- 
+  header .menu li{
+    margin: 15px 0;
+  }
+
+  header label:nth-child(4){
+    display: block;
+  }
+
+  /*container*/
+
+  .container .text-box h2{
+    font-size: 3rem;
+  }
+
+  .thumb img{
+    max-width: 30px;
+  }
+
+  /*Responsive Menu*/
+  #menu-show:checked ~ .menu{
+    left: 0;
+  }
+
+  #menu-show:checked ~ label:nth-child(4){
+    display: none;
+  }
+
+  #menu-show:checked ~ label:nth-child(4){
+    display: block;
+  }
 
 }
